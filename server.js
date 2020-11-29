@@ -21,10 +21,18 @@ io.on('connection', socket => {
         socket.join(roomId);
         socket.to(roomId).broadcast.emit('user-connected', userId);
 
+    socket.emit('chat-message', 'Waiting for you to speak');
+    socket.on('send-message', message => {
+        console.log(message);
+        socket.broadcast.emit('chat-message', message);
+    })
+
         socket.on('disconnect', () => {
             socket.to(roomId).broadcast.emit('user-disconnected', userId);
         })
     })
 })
+
+
 
 server.listen(3000)
