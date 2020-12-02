@@ -8,8 +8,8 @@
 
 ># Steps To Run This Project
 - Clone this repo.
-- Write npm install in the root folder
-- Write npm i peer in the root folder
+- Write npm install in the root directory 
+- Write npm i peer in the root directory
 - Open two terminals
 - Write node server.js in first terminal
 - Write peerjs --port 3001 in second termninal
